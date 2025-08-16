@@ -1,4 +1,4 @@
-# Electricity Billing System
+# Electricity Billing Management System
 This is a GUI made using Java Swing.
 It lets User perform multiple operations like:-
 
@@ -48,4 +48,57 @@ Database for this Electricity Billing System contains 4 Tables
 
 
 Java communicates with MySQL tables using JDBC which stands for Java Database Connectivity.
+
+# How to Run
+
+## Clone the Repository
+git clone https://github.com/<your-username>/Electricity-Bill-Management-system.git
+cd Electricity-Bill-Management-system
+
+## Setup Database (MySQL)
+
+# Install MySQL server.
+
+Open MySQL shell or Workbench.
+
+# Create a new database:
+
+CREATE DATABASE electricity;
+USE electricity;
+
+
+# Create required tables:
+
+CREATE TABLE login (username VARCHAR(50), password VARCHAR(50));
+CREATE TABLE emp (name VARCHAR(50), meternumber VARCHAR(20), address VARCHAR(100), state VARCHAR(50), city VARCHAR(50), email VARCHAR(50), phone VARCHAR(20));
+CREATE TABLE bill (meternumber VARCHAR(20), units INT, month VARCHAR(20), amount DOUBLE);
+CREATE TABLE tax (meterlocation VARCHAR(50), metertype VARCHAR(50), phasecode VARCHAR(20), billtype VARCHAR(20), days INT, meterrent DOUBLE, mcb_rent DOUBLE, servicerent DOUBLE, gst DOUBLE);
+
+## Add MySQL Connector
+
+Download MySQL Connector/J.
+
+Place the .jar file in your project lib/ folder.
+
+Add it to your project classpath in IntelliJ (File > Project Structure > Modules > Dependencies).
+
+## Configure Database Connection
+
+In your Connection Setup class, update credentials:
+
+String url = "jdbc:mysql://localhost:3306/electricity";
+String user = "root";
+String password = "your_password";
+
+## Run the Application
+
+Open project in IntelliJ IDEA.
+
+Run the Main class (or the class containing public static void main).
+
+Login and start using the system 
+
+## Author
+
+Developed & Maintained by **Revanth Reddy**
 
